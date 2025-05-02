@@ -1,4 +1,4 @@
---sql query to categorize products based on their price
+--SQL query to categorize products based on their price
 
 
 SELECT ProductID,ProductName,Price, 
