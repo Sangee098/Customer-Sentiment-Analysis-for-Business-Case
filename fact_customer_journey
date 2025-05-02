@@ -16,4 +16,4 @@ FROM
 (SELECT Journeyid,customerid, productid,visitdate, stage, Action, duration,
 AVG(duration) OVER(PARTITION BY visitDate) as avg_duration, --Average duration of the specific date as we are partitioning the data based on the visit_date
 ROW_NUMBER() OVER (PARTITION BY customerID, productid,visitdate, stage, action ORDER BY Journeyid) as row_number FROM customer_journey) AS subquery
-WHERE row_number=1; --retrieving only the first occurrence of the duplicate duplicate group identified in the subquery
+WHERE row_number=1; --retrieving only the first occurrence of the duplicate group identified in the subquery
